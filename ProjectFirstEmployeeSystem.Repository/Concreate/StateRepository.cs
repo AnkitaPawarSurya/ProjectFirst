@@ -26,6 +26,7 @@ namespace ProjectFirstEmployeeSystem.Repository.Concerete
         {
             return context.States.Find(id);        
         }
+       
 
 
 

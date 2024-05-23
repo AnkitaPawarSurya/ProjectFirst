@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjectFirstEmployeeSystem.BusinessService.Concrete;
+using ProjectFirstEmployeeSystem.BusinessService.Interface;
 using ProjectFirstEmployeeSystem.Repository.Concerete;
 using ProjectFirstEmployeeSystem.Repository.Interface;
 
@@ -9,16 +11,16 @@ namespace ProjectFirstEmployeeSystem.Controllers
 {
     public class StateController : Controller
     {
-      private readonly IStateRepository stateRepository;
+      private readonly IStateService stateservice;
 
         public StateController() 
         {
-            stateRepository= new StateRepository();
+			stateservice = new StateService();
         }
 
         public IActionResult Index()
         {
-            return View(stateRepository.Stateslist());
+            return View(stateservice.Stateslist());
         }
     }
 }
